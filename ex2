@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int *wskaz1;
+    int wskazywana = 10;
+    
+    system("clear");
+    wskaz1 = &wskazywana;
+    
+    printf("wskazywana %d\n", wskazywana);
+    
+    *wskaz1*=*wskaz1;
+    printf("wskazywana %d\n", wskazywana);
+    return 0;
+}
