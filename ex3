@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+#define WYMIAR 4
+
+int main(void)
+{
+    int wymiar = WYMIAR;
+    int dane[WYMIAR] = {0, 10, 20, 30};
+    int * wskaznik;
+    
+    wskaznik = dane;
+    
+    for(int i = 0; i < wymiar; i++)
+        printf("dane[%d] = %3d\t adres maszynowy = %p\n", i , dane[i], &dane[i]);
+
+    return 0;
+}
