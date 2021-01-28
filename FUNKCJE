@@ -1,0 +1,752 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void silnia();
+
+int main(int argc, char *argv[])
+{
+    /*
+        Zadanie 1
+        Napisz program zawierający funkcję, która obliczy n!. Program należy uruchomić dla 10
+        zestawów danych.
+        Uwaga!
+        Program pobiera dane z pliku. Jeśli plik znajduje się w tym samym katalogu co plik exe wystarczy że jako parametr
+        podczas uruchamiania podamy nazwę pliku. W przeciwnym wypadku musimy jako parametr podać pełną ścieżkę do pliku.
+        Liczby do liczenia silni powinny być oddzielone spacjami bądź enterami.
+    */
+    FILE *plik;
+    int i,n,wynik;
+    if(argc==2){
+        if((plik=fopen(argv[1],"r"))!=NULL){
+            for(i=0;i<20;i++){
+                if(fscanf(plik,"%d",&n)!=-1){
+                    silnia(n);
+                }else{
+                    printf("Za malo argumentow w pliku %s",argv[1]);
+                    break;
+                }
+            }
+        }else{
+            printf("Wystapil blad przy otwieraniu pliku: \"%s\"\n",argv[1]);
+        }
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+void silnia(int n){
+    int i;
+    double wynik=1;
+    if(n>=0){
+        for(i=1;i<=n;i++){
+            wynik=wynik*i;
+        }
+        printf("%d! = %.0f\n",n,wynik);
+    }else{
+        printf("Nie mamy silni dla liczb ujemnych, wiec nie ma wyniku dla %d!\n",n);
+    }
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float srednia();
+
+int main()
+{
+    /*
+        Zadanie 2
+        Napisz program, który zawiera funkcję obliczającą średnią arytmetyczną liczb
+        zmiennoprzecinkowych z podanej tablicy (parametr funkcji). W programie należy wykonać
+        funkcję kilkakrotnie dla różnych tablic.
+    */
+    int ile1,ile2,ile3;
+    float tablica1[]={2.42,12.2423,223.234,7634.234,434.234,22.563,23.75,2.764,9.346,8,243};
+    float tablica2[]={4.73,23.545,134.7,2.773,2.6742,345.2256,22.7,32.263,2.452};
+    float tablica3[]={234.4234,1.451,223.622,1145.1234,23.562,2.52};
+    ile1 = sizeof tablica1 / sizeof *tablica1;
+    ile2 = sizeof tablica2 / sizeof *tablica2;
+    ile3 = sizeof tablica3 / sizeof *tablica3;
+    printf("Srednia tablicy 1 wynosi: %f\n",srednia(&tablica1,ile1));
+    printf("Srednia tablicy 2 wynosi: %f\n",srednia(&tablica2,ile2));
+    printf("Srednia tablicy 3 wynosi: %f\n",srednia(&tablica3,ile3));
+    return 0;
+}
+
+float srednia(float *tablica,int ile){
+    int i;
+    float suma=0;
+    for(i=0;i<ile;i++){
+        suma += tablica[i];
+    }
+    suma = suma/ile;
+    return suma;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void menu();
+void poleprostokata();
+void polekola();
+void poletrojkata();
+
+int main()
+{
+/*
+    Zadanie 3
+    Napisz program, który umożliwi wariantowe i wielokrotne wykonywanie następujących
+    kilku funkcji: obliczanie pola prostokąta, obliczanie pola koła, obliczanie pola trójkąta.
+    Program powinien kończyć działanie po naciśnięciu ‘K’ (należy uwzględnić to w menu w
+    programie).
+*/
+    menu();
+    return 0;
+}
+
+void menu(){
+    char wybor[1];
+    printf("Co chcesz policzyc:\n  1 Pole prostokata\n  2 Pole kola\n  3 Pole trojkata\n  K Koniec programu\nPodaj swoj wybor: ");
+    scanf("%s",wybor);
+    switch (wybor[0]){
+    case '1':
+        system("cls");
+        poleprostokata();
+        break;
+    case '2':
+        system("cls");
+        polekola();
+        break;
+    case '3':
+        system("cls");
+        poletrojkata();
+        break;
+    case 'K':
+        system("cls");
+        break;
+    default:
+        system("cls");
+        printf("Podales zly parametr. Wprowadz 1 2 3 lub K\n");
+        menu();
+        break;
+    }
+
+}
+
+void poleprostokata(){
+    float a,b;
+    printf("Liczymy pole prostokata. Podaj dlugosci bokow proftokata. W przypadku liczb niecalkowitych czesci dziesietne oddziel kropka.\n");
+    printf("Podaj pierwszy bok prostokata: ");
+    scanf("%f",&a);
+    printf("Podaj drugi bok prostokata: ");
+    scanf("%f",&b);
+    system("cls");
+    printf("Pole prostokata o bokach %f i %f wynosi %f\n\n",a,b,a*b);
+    menu();
+}
+
+void polekola(){
+    float pi=3.141592,r;
+    printf("Liczymy pole kola. Podaj promien kola. W przypadku liczb niecalkowitych czesci dziesietne oddziel kropka.\n");
+    printf("Podaj promien kola: ");
+    scanf("%f",&r);
+    system("cls");
+    printf("Pole kola o promieniu %f wunosi %f\n\n",r,pi*(r*r));
+    menu();
+
+}
+
+void poletrojkata(){
+    float a,h;
+    printf("Liczymy pole trojkata. Podaj dlugosc podstawy i wysokosc trojkata. W przypadku liczb niecalkowitych czesci dziesietne oddziel kropka.\n");
+    printf("Podaj dlugosc podstawy trojkata: ");
+    scanf("%f",&a);
+    printf("Podaj wysokosc trojkata: ");
+    scanf("%f",&h);
+    system("cls");
+    printf("Pole trojkata o ppodstawie %f i wysokosci %f wynosi %f\n\n",a,h,a*h/2);
+    menu();
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void symbolnewtona();
+float silnia();
+
+int main()
+{
+/*
+    Zadanie 4
+    Napisz program zawierający funkcję, która oblicza symbol Newtona  . Program powinien
+    wykonać obliczenia dla 10 zestawów danych (n i k), wczytywanych z podanego przy
+    uruchomieniu pliku (argument programu). Dla każdego zestawu należy wyświetlić liczby i
+    wynik dwumianu.
+    Program uruchamiamy przez podanie w konsoli: Zadanie_3.exe < dane.txt przy założeniu
+    że plik txt znajduje się w tym katalogu co plik exe.
+*/
+    int rozmiar=10,tablica[rozmiar],i;
+    for (i=0;i<10;i+=2){
+        scanf("%d",&tablica[i]);
+        scanf("%d",&tablica[i+1]);
+        symbolnewtona(tablica[i],tablica[i+1]);
+    }
+    return 0;
+}
+
+void symbolnewtona(int n, int k){
+    if(0<=k && k<=n){
+        float wynik;
+        wynik = silnia(n)/(silnia(k)*silnia(n-k));
+        printf("Symbol Newtona dla liczb n=%d k=%d wynosi %f\n",n,k,wynik);
+    }else{
+        printf("\n\nBrak symbolu Newtona dla liczb n=%d k=%d. Nie jest spelniony warunek 0 <= %d <= %d!\n\n",n,k,k,n);
+    }
+
+}
+
+float silnia(int n){
+    int i;
+    float wynik=1;
+    if(n>=0){
+        for(i=1;i<=n;i++){
+            wynik=wynik*i;
+        }
+        return wynik;
+    }else{
+        printf("\n\nNie mamy silni dla liczb ujemnych, wiec nie ma wyniku dla %d!\n\n",n);
+        return 0;
+    }
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int najmniejszadodatnia();
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 5
+    Napisz program zawierający funkcję, która znajduje (pierwszą) najmniejszą liczbę
+    dodatnią w pierwszych n elementach 30 elementowej tablicy liczb całkowitych. Elementy
+    tablicy powinny być wczytywane w programie głównym ze wskazanego przy uruchomieniu
+    pliku (argument programu). W programie głównym wyświetlić na monitorze tablicę n-
+    elementową oraz wynik funkcji.
+    Uwaga!
+    Program pobiera dane z pliku. Jeśli plik znajduje się w tym samym katalogu co plik exe wystarczy że jako parametr
+    podczas uruchamiania podamy nazwę pliku. W przeciwnym wypadku musimy jako parametr podać pełną ścieżkę do pliku.
+    Liczby do uzupelnienia tablicy powinny być oddzielone spacjami bądź enterami.
+*/
+
+    FILE *plik;
+    int i,wynik;
+    int tablica[30];
+    if(argc==2){
+        if((plik=fopen(argv[1],"r"))!=NULL){
+            printf("\n\ntablica[]={");
+            for(i=0;i<30;i++){
+                if(fscanf(plik,"%d",&tablica[i])!=-1){
+                    if(i<29)
+                        printf("%d,",tablica[i]);
+                    else
+                        printf("%d}\n\n",tablica[i]);
+                }else{
+                    printf("Za malo argumentow w pliku %s",argv[1]);
+                    break;
+                }
+            }
+            if(i==30){
+                wynik = najmniejszadodatnia(&tablica,30);
+                printf("Najmniejsza liczba dodatnia z podanej tablicy to: %d \n",wynik);
+            }
+        }else{
+            printf("Wystapil blad przy otwieraniu pliku: \"%s\"\n",argv[1]);
+        }
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+int najmniejszadodatnia(int *tablica,int ile){
+    int najmniejsza=0;
+    for(int i=0;i<ile;i++){
+        if(tablica[i]>0){
+            if(tablica[i]<najmniejsza || najmniejsza==0){
+                najmniejsza=tablica[i];
+            }
+        }
+    }
+    return najmniejsza;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int najmniejszaujemna(int tab[], int ile);
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 6
+    Napisz program zawierający funkcję, która znajduje największą liczbę ujemną w
+    pierwszych n elementach 30 elementowej tablicy liczb całkowitych. Elementy tablicy
+    powinny być wczytywane w programie głównym ze wskazanego przy uruchomieniu pliku
+    (argument programu). n – ma być wczytywane z klawiatury w programie głównym. W
+    programie głównym wyświetlić na monitorze tablicę n-elementową oraz wynik funkcji.
+*/
+    FILE *plik;
+    int i,ile=30,tab[ile],wynik;
+    if(argc==2){
+        if((plik=fopen(argv[1],"r"))!=NULL){
+            for(i=0;i<ile;i++){
+                if(fscanf(plik,"%d",&tab[i])==-1){
+                    printf("Za malo argumentow w pliku %s",argv[1]);
+                    break;
+                }
+            }
+            if(i==ile)
+                printf("Najwieksza ujemna z tablicy to: %d",najmniejszaujemna(tab,ile));
+        }else{
+            printf("Wystapil blad przy otwieraniu pliku: \"%s\"\n",argv[1]);
+        }
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+
+    return 0;
+}
+
+int najmniejszaujemna(int tab[], int ile){
+    int wynik = 0;
+    for(int i=0;i<ile;i++){
+        if(tab[i]<0&&(tab[i]>wynik || wynik==0))
+            wynik = tab[i];
+    }
+    return wynik;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int sumapodzielnych13(int tab[], int ile);
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 7
+    Napisz program zawierający funkcję, która oblicza sumę liczb podzielnych przez 13 w 20
+    elementowej tablicy liczb całkowitych. Elementy tablicy powinny być wczytywane w
+    programie głównym ze wskazanego przy uruchomieniu pliku (argument programu). W
+    programie głównym wyświetlić na monitorze tablicę 20-elementową oraz wynik funkcji.
+*/
+FILE *plik;
+    int i,ile=20,tab[ile],wynik;
+    if(argc==2){
+        if((plik=fopen(argv[1],"r"))!=NULL){
+            for(i=0;i<ile;i++){
+                if(fscanf(plik,"%d",&tab[i])==-1){
+                    printf("Za malo argumentow w pliku %s",argv[1]);
+                    break;
+                }
+            }
+            if(i==ile){
+                printf("tab[]={");
+                for(i=0;i<ile;i++){
+                    if(i!=ile-1)
+                        printf("%d,",tab[i]);
+                    else
+                        printf("%d}\n",tab[i]);
+                }
+                printf("Suma liczb podzielnych przez 13 wymosi: %d",sumapodzielnych13(tab,ile));
+            }
+        }else{
+            printf("Wystapil blad przy otwieraniu pliku: \"%s\"\n",argv[1]);
+        }
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+int sumapodzielnych13(int tab[], int ile){
+    int suma = 0;
+    for(int i=0;i<ile;i++){
+        if((tab[i]%13)==0){
+            suma += tab[i];
+        }
+    }
+    printf("\n");
+    return suma;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int iloczyn(int tab[], int ile);
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 8
+    Napisz program zawierający funkcję, która oblicza iloczyn liczb dodatnich, nieparzystych
+    w 20 elementowej tablicy liczb całkowitych. Elementy tablicy powinny być wczytywane w
+    programie głównym ze wskazanego przy uruchomieniu pliku (argument programu). W
+    programie głównym wyświetlić na monitorze tablicę 20-elementową oraz wynik funkcji.
+*/
+FILE *plik;
+    int i,ile=20,tab[ile],wynik;
+    if(argc==2){
+        if((plik=fopen(argv[1],"r"))!=NULL){
+            for(i=0;i<ile;i++){
+                if(fscanf(plik,"%d",&tab[i])==-1){
+                    printf("Za malo argumentow w pliku %s",argv[1]);
+                    break;
+                }
+            }
+            if(i==ile){
+                printf("tab[]={");
+                for(i=0;i<ile;i++){
+                    if(i!=ile-1)
+                        printf("%d,",tab[i]);
+                    else
+                        printf("%d}\n",tab[i]);
+                }
+                printf("Iloczyn liczb dodadnich nieparzystych wynosi: %d",iloczyn(tab,ile));
+            }
+        }else{
+            printf("Wystapil blad przy otwieraniu pliku: \"%s\"\n",argv[1]);
+        }
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+int iloczyn(int tab[], int ile){
+    int wynik = 0;
+    for(int i=0;i<ile;i++){
+        if(tab[i]>0 && tab[i]%2!=0){
+            if(wynik==0)
+                wynik = tab[i];
+            else
+                wynik *= tab[i];
+        }
+    }
+    return wynik;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int *pierwsze(int n);
+
+int czypierwsza(int n);
+
+int main()
+{
+/*
+    Zadanie 9
+    Napisz program zawierający funkcję, która rozpoznaje czy liczba(parametr funkcji) jest
+    pierwsza (zwraca 1 jeżeli jest i 0 jeżeli nie) oraz tworzy tablicę, którą wypełnia 10-cioma
+    kolejnymi liczbami pierwszymi, nie mniejszymi od liczby podanej n (liczba n wczytywana z
+    klawiatury w programie głównym). W programie głównym wyświetlić na monitorze
+    utworzoną tablicę 10-elementową.
+*/
+    int n;
+    printf("Program sprawdzajacy czy podana liczba jest liczba pierwsza i zwracajacy tablice 10 kolejnych liczb pierwszych.\n");
+    while(1){
+        printf("Podaj liczbe calkowita wieksza od 1 do sprawdzenia: ");
+        scanf("%d",&n);
+        if(n>1)
+            break;
+    }
+    int *wynik = pierwsze(n);
+    printf("Funkcja dla liczby %d zwrocila %d (1 - liczba pierwsza, 0 - liczba nie pierwsza)\n",n,wynik[0]);
+    int *tab = wynik[1];
+    printf("10 kolejnych liczb pierwszych to: ");
+    for(n=0;n<10;n++){
+        if(n!=9)
+            printf("%d,",tab[n]);
+        else
+            printf("%d}",tab[n]);
+    }
+    return 0;
+}
+
+int *pierwsze(int n){
+    static int tab[10];
+    static int wynik[2];
+    int i=0,liczba=n;
+    wynik[0] = czypierwsza(n);
+    while(i<10){
+        liczba++;
+        if(czypierwsza(liczba)){
+            tab[i]=liczba;
+            i++;
+        }
+    }
+    wynik[1]=tab;
+    return wynik;
+}
+
+int czypierwsza(int n){
+    int doile,wynik=1;
+    doile = (n/2)+1;
+    for(int i=2;i<doile;i++){
+        if(n%i==0){
+            wynik = 0;
+            break;
+        }
+    }
+    return wynik;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int sumapodzienych(int *tab, int ile);
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 10
+    Napisz program zawierający funkcję, która oblicza sumę liczb podzielnych przez 11 w 30
+    elementowej tablicy liczb całkowitych. Elementy tablicy powinny być wygenerowane
+    losowo w programie głównym(oraz wyświetlone na monitorze), a następnie zapisane we
+    wskazanym przy uruchomieniu pliku (argument programu) razem z wynikiem zwróconym
+    przez funkcję.
+*/
+    if(argc==2){
+        int ile=30,tablicaliczblosowych[ile],i,suma;
+        FILE *plik;
+        srand(time(NULL));
+        for(i=0;i<ile;i++){
+            tablicaliczblosowych[i]=rand()%101;
+        }
+        if((plik=fopen(argv[1],"w"))==NULL){
+            printf("Blad otwierania pliku w trybie zapisu!\n");
+            exit(1);
+        }
+        printf("tablica[] = {");
+        fprintf(plik,"tablica[] = {");
+        for(i=0;i<ile;i++){
+            if(i!=ile-1){
+                printf("%d, ",tablicaliczblosowych[i]);
+                fprintf(plik,"%d, ",tablicaliczblosowych[i]);
+            }else{
+                printf("%d}\n",tablicaliczblosowych[i]);
+                fprintf(plik,"%d}\n",tablicaliczblosowych[i]);
+            }
+        }
+        suma = sumapodzienych(tablicaliczblosowych,ile);
+        printf("Suma liczb podzielnych przez 11 wynosi: %d",suma);
+        fprintf(plik,"Suma liczb podzielnych przez 11 wynosi: %d",suma);
+        fclose(plik);
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+int sumapodzienych(int *tab, int ile){
+    int suma=0;
+    for(int i=0;i<ile;i++){
+        if(tab[i]%11==0)
+            suma+=tab[i];
+    }
+    return suma;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int najmniejszadodatnia(int *tab, int ile);
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 11
+    Napisz program zawierający funkcję, która znajduje (pierwszą) najmniejszą liczbę
+    dodatnią w 50 elementowej tablicy liczb całkowitych. Elementy tablicy powinny być
+    wygenerowane losowo w programie głównym(oraz wyświetlone na monitorze), a następnie
+    zapisane we wskazanym przy uruchomieniu pliku (argument programu) razem z wynikiem
+    zwróconym przez funkcję.
+*/
+    if(argc==2){
+        int ile=50,tablicaliczblosowych[ile],i,najmniejsza;
+        FILE *plik;
+        srand(time(NULL));
+        for(i=0;i<ile;i++){
+            tablicaliczblosowych[i]=(rand()%201)-100;
+        }
+        if((plik=fopen(argv[1],"w"))==NULL){
+            printf("Blad otwierania pliku w trybie zapisu!\n");
+            exit(1);
+        }
+        printf("tablica[] = {");
+        fprintf(plik,"tablica[] = {");
+        for(i=0;i<ile;i++){
+            if(i!=ile-1){
+                printf("%d,",tablicaliczblosowych[i]);
+                fprintf(plik,"%d,",tablicaliczblosowych[i]);
+            }else{
+                printf("%d}\n",tablicaliczblosowych[i]);
+                fprintf(plik,"%d}\n",tablicaliczblosowych[i]);
+            }
+        }
+        najmniejsza = najmniejszadodatnia(tablicaliczblosowych,ile);
+        printf("Najmniejsza dodatnia z tablicy to: %d",najmniejsza);
+        fprintf(plik,"Najmniejsza dodatnia z tablicy to: %d",najmniejsza);
+        fclose(plik);
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+int najmniejszadodatnia(int *tab, int ile){
+    int najmniejsza=0;
+    for(int i=0;i<ile;i++){
+        if(tab[i]>0 && (tab[i]<najmniejsza || najmniejsza==0))
+            najmniejsza=tab[i];
+    }
+    return najmniejsza;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int najwiekszaujemna(int *tab, int ile);
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 12
+    Napisz program zawierający funkcję, która znajduje (pierwszą) największą liczbę ujemną
+    w 50 elementowej tablicy liczb całkowitych. Elementy tablicy powinny być wygenerowane
+    losowo w programie głównym(oraz wyświetlone na monitorze), a następnie zapisane we
+    wskazanym przy uruchomieniu pliku (argument programu) razem z wynikiem zwróconym
+    przez funkcję.
+*/
+    if(argc==2){
+        int ile=50,tablicaliczblosowych[ile],i,najwieksza;
+        FILE *plik;
+        srand(time(NULL));
+        for(i=0;i<ile;i++){
+            tablicaliczblosowych[i]=(rand()%201)-100;
+        }
+        if((plik=fopen(argv[1],"w"))==NULL){
+            printf("Blad otwierania pliku w trybie zapisu!\n");
+            exit(1);
+        }
+        printf("tablica[] = {");
+        fprintf(plik,"tablica[] = {");
+        for(i=0;i<ile;i++){
+            if(i!=ile-1){
+                printf("%d,",tablicaliczblosowych[i]);
+                fprintf(plik,"%d,",tablicaliczblosowych[i]);
+            }else{
+                printf("%d}\n",tablicaliczblosowych[i]);
+                fprintf(plik,"%d}\n",tablicaliczblosowych[i]);
+            }
+        }
+        najwieksza = najwiekszaujemna(tablicaliczblosowych,ile);
+        printf("Najwieksza ujemna z tablicy to: %d",najwieksza);
+        fprintf(plik,"najwieksza ujemna z tablicy to: %d",najwieksza);
+        fclose(plik);
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+int najwiekszaujemna(int *tab, int ile){
+    int najwieksza=0;
+    for(int i=0;i<ile;i++){
+        if(tab[i]<0 && (tab[i]>najwieksza || najwieksza==0))
+            najwieksza=tab[i];
+    }
+    return najwieksza;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+double filoczyn(int *tab, int ile);
+
+int main(int argc, char *argv[])
+{
+/*
+    Zadanie 13
+    Napisz program zawierający funkcję, która oblicza iloczyn liczb dodatnich,
+    nieparzystych w 50 elementowej tablicy liczb całkowitych. Elementy tablicy powinny być
+    wygenerowane losowo w programie głównym(oraz wyświetlone na monitorze), a następnie
+    zapisane we wskazanym przy uruchomieniu pliku (argument programu) razem z wynikiem
+    zwróconym przez funkcję.
+*/
+    if(argc==2){
+        int ile=50,tablicaliczblosowych[ile],i;
+        double iloczyn;
+        FILE *plik;
+        srand(time(NULL));
+        for(i=0;i<ile;i++){
+            tablicaliczblosowych[i]=(rand()%21)-10;
+        }
+        if((plik=fopen(argv[1],"w"))==NULL){
+            printf("Blad otwierania pliku w trybie zapisu!\n");
+            exit(1);
+        }
+        printf("tablica[] = {");
+        fprintf(plik,"tablica[] = {");
+        for(i=0;i<ile;i++){
+            if(i!=ile-1){
+                printf("%d,",tablicaliczblosowych[i]);
+                fprintf(plik,"%d,",tablicaliczblosowych[i]);
+            }else{
+                printf("%d}\n",tablicaliczblosowych[i]);
+                fprintf(plik,"%d}\n",tablicaliczblosowych[i]);
+            }
+        }
+        iloczyn = filoczyn(tablicaliczblosowych,ile);
+        printf("Iloczyn dodatnich nieparzystych z tablicy to: %.0f",iloczyn);
+        fprintf(plik,"Iloczyn dodatnich nieparzystych z tablicy to: %.0f",iloczyn);
+        fclose(plik);
+    }else{
+        printf("Podano bledne argumenty przy otwieraniu pliku.");
+    }
+    return 0;
+}
+
+double filoczyn(int *tab, int ile){
+    double iloczyn=0;
+    for(int i=0;i<ile;i++){
+        if(tab[i]>0 && tab[i]%2)
+            if(iloczyn){
+                iloczyn = iloczyn*tab[i];
+            }else{
+                iloczyn = tab[i];
+            }
+    }
+    return iloczyn;
+}
+
+
