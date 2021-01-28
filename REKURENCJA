@@ -1,0 +1,263 @@
+ZADANIE 1
+#include <stdio.h>
+#include <stdlib.h>
+
+void nZnakow(int n);
+void wczytaj();
+
+int main()
+{
+/*
+    Napisz funkcję rekurencyjną, która wypisze na ekranie n
+    znaków.
+*/
+    int znakow;
+    printf("Ile znakow chcesz wypisac na ekranie?: ");
+    scanf("%d",&znakow);
+    if(znakow>0){
+        nZnakow(znakow);
+    }else{
+        wczytaj();
+    }
+    return 0;
+}
+
+    int znakow;
+void wczytaj(){
+    int znakow;
+    system("cls");
+    printf("Podaj wartosc wieksza od 0.\nIle znakow chcesz wypisac na ekranie?: ");
+    scanf("%d",&znakow);
+    if(znakow>0){
+        nZnakow(znakow);
+    }else{
+        wczytaj();
+    }
+}
+
+void nZnakow(int n){
+    printf("*");
+    if(--n){
+        nZnakow(n);
+    }
+}
+
+ZADANIE 2
+#include <stdio.h>
+#include <stdlib.h>
+
+void doJeden(int liczba);
+
+int main()
+{
+/*
+    Napisz funkcję rekurencyjną, która wyœwietli liczby
+    całkowite od n do 1.
+*/
+    int liczba;
+    printf("Wypisywanie liczb do 1. Podaj liczbe: ");
+    scanf("%d",&liczba);
+    doJeden(liczba);
+    return 0;
+}
+
+void doJeden(int liczba){
+    if(liczba==1){
+        printf(" 1");
+    }else if(liczba>1){
+        printf(" %d",liczba--);
+        doJeden(liczba);
+    }else{
+        printf(" %d",liczba++);
+        doJeden(liczba);
+    }
+}
+
+ZADANIE 3
+#include <stdio.h>
+#include <stdlib.h>
+
+void odJeden(int i, int liczba);
+
+int main()
+{
+/*
+    Napisz funkcję rekurencyjną, która wyświetli liczby
+    całkowite od 1 do n.
+*/
+    int liczba;
+    printf("Wyswietlanie liczb do 1.\nPodaj liczbe: ");
+    scanf("%d",&liczba);
+    odJeden(1,liczba);
+    return 0;
+}
+
+void odJeden(int i, int liczba){
+    printf(" %d",i);
+    if(i>liczba){
+        odJeden(--i,liczba);
+    }else if(i<liczba){
+        odJeden(++i,liczba);
+    }
+}
+
+ZADANIE 4
+#include <stdio.h>
+#include <stdlib.h>
+
+void doJeden(int liczba);
+
+int main()
+{
+/*
+    Napisz funkcjê rekurencyjn¹, która wyœwietli liczby
+    ca³kowite od 1 do n.
+*/
+    int liczba;
+    printf("Wypisywanie liczb do 1. Podaj liczbe: ");
+    scanf("%d",&liczba);
+    doJeden(liczba);
+    return 0;
+}
+
+void doJeden(int liczba){
+    if(liczba==1){
+        printf(" 1");
+    }else if(liczba>1){
+        doJeden(liczba-1);
+        printf(" %d",liczba);
+    }else{
+        doJeden(liczba+1);
+        printf(" %d",liczba);
+    }
+}
+
+ZADANIE 5
+#include <stdio.h>
+#include <stdlib.h>
+
+void choinka(int przebieg, int wierszy);
+
+void noga(int wierszy);
+
+int main()
+{
+/*
+    Napisz funkcję rekurencyjną, która wyświetla choinkę o
+    wysokości n (gwiazdkami).
+*/
+    int ile, przebieg=0;
+    printf("Na ile wierszy narysowac choinke? : ");
+    scanf("%d",&ile);
+    printf("\n\n");
+    choinka(przebieg,ile);
+    return 0;
+}
+
+void choinka(int przebieg, int wierszy){
+    for(int i=0;i<wierszy-przebieg;i++){
+        printf(" ");
+    }
+    for(int i=0;i<przebieg*2+1;i++){
+        printf("*");
+    }
+    printf("\n");
+    przebieg++;
+    if(przebieg<wierszy){
+        choinka(przebieg,wierszy);
+    }else{
+        noga(wierszy);
+    }
+}
+
+void noga(int wierszy){
+    int grubosc = 1;
+    int spacji = wierszy - grubosc;
+    if(wierszy>6){
+        grubosc=grubosc+2;
+    }else{
+        spacji++;
+    }
+    for(int rzad=0;rzad<2;rzad++){
+        for(int i=0;i<spacji;i++){
+            printf(" ");
+        }
+        for(int i=0;i<grubosc;i++){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+ZADANIE 6
+#include <stdio.h>
+#include <stdlib.h>
+
+double horner(double *tab, double wartosc, int i);
+
+int main(int argc, char *argv[])
+{
+/*
+    Napisz funkcjê rekurencyjn¹ która obliczy wartoœæ wielomianu wykorzystuj¹c algorytm Hornera
+*/
+    int stopien;
+    printf("Podaj stopien wielomianu: ");
+    scanf("%d",&stopien);
+    double tablica[stopien],liczba;
+    for(int i=0;i<stopien;i++){
+        printf("Podaj a(%d)",i);
+        scanf("%lf",&tablica[i]);
+    }
+    printf("Podaj liczbe: ");
+    scanf("%lf",&liczba);
+    printf("Wartosc funkcji dla %lf wynosi %lf",liczba,horner(tablica,liczba,stopien));
+    return 0;
+}
+
+double horner(double *tab, double wartosc, int i){
+    if(i==0){
+        return tab[0];
+    }else{
+        return tab[i]+wartosc*(horner(tab,wartosc,i-1));
+    }
+}
+
+ZADANIE 7
+#include <stdio.h>
+#include <stdlib.h>
+
+void NWD(int a, int b);
+
+int main()
+{
+/*
+    Napisz funkcjê rekurencyjn¹, która znajduje najwiêkszy
+    wspólny dzielnik 2 liczb ca³kowitych dodatnich
+    (wykorzystaæ algorytm Euklidesa).
+*/
+    int pierwsza,druga;
+    printf("Witaj w programie obliczajacym NWD\nPodaj pierwsza liczbe wieksza od 0: ");
+    scanf("%d",&pierwsza);
+    printf("Podaj druga liczbe wieksza od 0: ");
+    scanf("%d",&druga);
+    if(pierwsza>0 && druga>0){
+        if(pierwsza>druga){
+            NWD(pierwsza,druga);
+        }else{
+            NWD(druga,pierwsza);
+        }
+    }else{
+        printf("Podano liczby mniejsze od 0");
+    }
+    return 0;
+}
+
+void NWD(int a, int b){
+    int reszta;
+    reszta=a%b;
+    if(reszta!=0){
+        NWD(b,reszta);
+    }else{
+        printf("Najwiekszy wspolny dzielnik to: %d",b);
+    }
+}
