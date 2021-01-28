@@ -1,0 +1,248 @@
+ZADANIE 1
+
+#include <stdio.h>
+
+int main() {
+    int minimumNumber = 0;
+
+    do {
+        int currentNumber = 0;
+        printf("Podaj liczbe calkowita (0 aby zakonczyc):");
+        scanf("%d", &currentNumber);
+
+        if (currentNumber == 0) {
+            break;
+        }
+        else if (currentNumber < minimumNumber || minimumNumber == 0) {
+            minimumNumber = currentNumber;
+        }
+
+        printf("Najmniejsza z podanych liczb: %d", minimumNumber);
+        printf("\n==================================\n");
+
+    } while(1);
+}
+
+ZADANIE 2
+
+#include <stdio.h>
+
+int main() {
+
+    do {
+        char inputChar = 0;
+        printf("Podaj znak:");
+        fflush(stdin);
+        scanf("%c", &inputChar);
+
+        if (inputChar == '*') {
+            char exitPrompt = 0;
+            printf("Czy chcesz przerwac wczytywanie? (T/n)");
+            fflush(stdin);
+            scanf("%c", &exitPrompt);
+
+            if (exitPrompt == 't' || exitPrompt == 'T') {
+                break;
+            } else {
+                continue;
+            }
+        }
+
+        printf("\nWczytano: %c\n", inputChar);
+
+    } while(1);
+
+    return 0;
+}
+
+ZADANIE 3
+
+#include <stdio.h>
+
+int main() {
+
+    int sum = 0,
+        currentNumber = 0;
+
+    do {
+        printf("Wczytaj liczbe calkowita nieujemna:");
+        scanf("%d", &currentNumber);
+
+        if (currentNumber >= 0) {
+            sum += currentNumber;
+        } else {
+            printf("Liczba ujemna, pomijam...\n");
+            continue;
+        }
+
+        printf("Suma: %d\n", sum);
+    } while(currentNumber % 13 != 0);
+
+    return 0;
+}
+
+ZADANIE 4
+
+#include <stdio.h>
+
+int main() {
+
+    int sum = 0;
+    do {
+
+        int currentNumber = 0;
+        printf("Podaj liczbe calkowita: ");
+        scanf("%d", &currentNumber);
+
+        if (currentNumber % 2 != 0) {
+            sum += currentNumber;
+        }
+
+        printf("Suma: %d\n", sum);
+    } while(sum % 100 != 0);
+
+    return 0;
+}
+
+ZADANIE 5
+
+#include <stdio.h>
+
+int main() {
+
+    float product = 0;
+    do {
+        float currentNumber = 0;
+        printf("Wprowadz liczbe zmiennoprzecinkowa dodatnia:");
+        scanf("%f", &currentNumber);
+
+        if (currentNumber <= 0) {
+            printf("Liczba niedodatnia, pomijam...\n");
+            continue;
+        }
+
+        if (product == 0) {
+            product = currentNumber;
+        } else {
+            product *= currentNumber;
+        }
+
+        printf("Wczytano: %f (Iloczyn: %f)\n", currentNumber, product);
+    } while (product <= 500);
+
+    return 0;
+}
+
+ZADANIE 6
+
+#include <stdio.h>
+
+int main() {
+    int currentNumber = 0;
+    do {
+        printf("Podaj liczbe calkowita:");
+        scanf("%d", &currentNumber);
+
+        printf("Wczytano: %d\n", currentNumber);
+    } while(currentNumber % 11 != 0 && currentNumber % 13 != 0);
+
+    return 0;
+}
+
+ZADANIE 7
+
+#include <stdio.h>
+
+int main() {
+    char prevChar,
+         currChar = 0;
+
+    do {
+        prevChar = currChar;
+
+        printf("Podaj znak:");
+        fflush(stdin);
+        scanf("%c", &currChar);
+
+    } while(prevChar != '*' || currChar != '.');
+
+    return 0;
+}
+
+ZADANIE 8
+
+#include <stdio.h>
+
+int main() {
+    char prevChar,
+         currChar = 0;
+
+    do {
+        prevChar = currChar;
+
+        printf("Podaj znak:");
+        fflush(stdin);
+        scanf("%c", &currChar);
+
+        printf("Wczytano: %c\n", currChar);
+
+    } while(prevChar != currChar);
+
+    return 0;
+}
+
+ZADANIE 9
+
+#include <stdio.h>
+
+int main() {
+    int firstNumber = 0, secondNumber = 0;
+
+    do {
+        printf("Podaj pierwsza liczbe:");
+        scanf("%d", &firstNumber);
+
+        printf("Podaj druga liczbe:");
+        scanf("%d", &secondNumber);
+
+        printf("Wieksza: %d\n",
+               firstNumber > secondNumber
+                    ? firstNumber
+                    : secondNumber
+               );
+
+    } while(firstNumber != secondNumber);
+
+    return 0;
+}
+
+ZADANIE 10
+
+#include <stdio.h>
+
+int main() {
+    float sum = 0;
+
+    do {
+        float currNumber = 0;
+        printf("Wczytaj liczbe:");
+        scanf("%f", &currNumber);
+
+        char currChar;
+        printf("Wczytaj znak:");
+        fflush(stdin);
+        scanf("%c", &currChar);
+
+        if (sum == 0) {
+            sum = currNumber;
+        } else {
+            sum *= currNumber;
+        }
+
+        printf("Liczba: %f | Znak: %d | Suma: %f\n", currNumber, currChar, sum);
+    } while (sum <= 350);
+
+    return 0;
+}
+
+
