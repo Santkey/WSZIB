@@ -1,0 +1,303 @@
+ZADANIE 1
+
+#include "stdio.h"
+
+int main() {
+    printf("Pierwszy znak: ");
+    char firstChar = getchar();
+
+    printf("Drugi znak: ");
+    fflush(stdin); // Remove "\n" from input buffer
+    char secondChar = getchar();
+
+    // Print "A"
+    printf("\n\n%c%c%c%c%c%c%c%c%c%c\n", firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c%c%c%c%c%c%c%c%c%c\n", firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n", firstChar, firstChar);
+    printf("%c        %c\n\n", firstChar, firstChar);
+
+
+    // Print "B"
+    printf("%c%c%c%c%c%c%c%c%c%c\n", secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c%c%c%c%c%c%c%c%c%c\n", secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c        %c\n", secondChar, secondChar);
+    printf("%c%c%c%c%c%c%c%c%c%c\n", secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar);
+
+    return 0;
+}
+
+ZADANIE 2
+
+#include "stdio.h"
+
+int main() {
+    char studies[12];
+    printf("Podaj kierunek (11 znakow): ");
+    fflush(stdin);
+    fgets(studies, 12, stdin);
+
+    char studiesYear[5];
+    printf("Podaj rok studiow (4 znaki): ");
+    fflush(stdin);
+    fgets(studiesYear, 5, stdin);
+    // scanf("%s", studiesYear);
+
+    printf("Podaj znaki do ramki (2 znaki): ");
+    char firstChar, secondChar;
+    fflush(stdin);
+    scanf("%c%c", &firstChar, &secondChar);
+
+    scanf("%c%c", &firstChar, &secondChar);
+
+    printf("\n\n%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar);
+    printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", firstChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, firstChar);
+
+    printf("%c%c Imie i nazwisko: Filip Nowakowski %c%c\n", firstChar, secondChar, secondChar, firstChar);
+    printf("%c%c Kierunek: %s\t     %c%c\n", firstChar, secondChar, studies, secondChar, firstChar);
+    printf("%c%c Rok: %s\t\t\t     %c%c\n", firstChar, secondChar, studiesYear, secondChar, firstChar);
+
+    printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", firstChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, secondChar, firstChar);
+    printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar, firstChar);
+
+    return 0;
+}
+
+ZADANIE 3
+
+#include "stdio.h"
+
+int main() {
+    char z1;
+    char r1;
+
+    printf("Wpisz znak: \n");
+    scanf("%c%c",&z1,&r1);
+
+    printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c@.@",r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1);
+
+    printf("\n%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c%c%c%c%c%c      %c%c%c%c%c      %c%c%c%c%c%c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+    printf("%c     %c%c%c%c%c      %c%c%c%c%c      %c\n",r1,z1,z1,z1,z1,z1,z1,z1,z1,z1,z1,r1);
+
+    printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1,r1);
+
+    return 0;
+}
+
+ZADANIE 4
+
+#include "stdio.h"
+
+int main() {
+    printf("Podaj znak: ");
+    char Char;
+    scanf("%c", &Char);
+
+    if (Char >= 48 && Char <= 57) {
+        printf("Znak jest cyfra | %c * 12 = %i", Char, ((int)Char) * 12);
+    } else {
+        printf("Znak NIE jest cyfra");
+    }
+
+    return 0;
+}
+
+ZADANIE 5
+
+#include "stdio.h"
+
+int main() {
+    printf("Podaj znak: ");
+    char Char;
+    scanf("%c", &Char);
+
+    if (Char >= 65 && Char <= 90) {
+        printf("Duza litera! | Mala: %c", Char + 32);
+    } else if (Char >= 97 && Char <= 122) {
+        printf("Mala litera! | Duza: %c", Char - 32);
+    } else {
+        printf("To nie litera :(");
+    }
+
+    return 0;
+}
+
+ZADANIE 6
+
+#include "stdio.h"
+
+int main() {
+    float f1, f2, f3, f4;
+
+    printf("Podaj zmienna 1: ");
+    scanf("%f", &f1);
+    fflush(stdin);
+
+    printf("Podaj zmienna 2: ");
+    scanf("%f", &f2);
+    fflush(stdin);
+
+    printf("Podaj zmienna 3: ");
+    scanf("%f", &f3);
+    fflush(stdin);
+
+    printf("Podaj zmienna 4: ");
+    scanf("%f", &f4);
+
+    float product = f1 * f2 * f3 * f4;
+    float sum = f1 + f2 + f3 + f4;
+    if (product < 100 && product != 0) {
+        printf("Iloczyn: %f", product);
+    } else if (sum > 200) {
+        printf("Suma: %f", sum);
+    } else if (f1 == 0 || f2 == 0 || f3 == 0 || f4 == 0) {
+        printf("Jedna ze zmiennych jest rowna 0");
+    } else {
+        printf("Bledne dane");
+    }
+
+    return 0;
+}
+
+ZADANIE 7
+
+#include "stdio.h"
+
+int main() {
+    int i1, i2, i3, i4;
+
+    printf("Podaj zmienna 1: ");
+    scanf("%i", &i1);
+    fflush(stdin);
+
+    printf("Podaj zmienna 2: ");
+    scanf("%i", &i2);
+    fflush(stdin);
+
+    printf("Podaj zmienna 3: ");
+    scanf("%i", &i3);
+    fflush(stdin);
+
+    printf("Podaj zmienna 4: ");
+    scanf("%i", &i4);
+
+    int product = i1 * i2 * i3 * i4;
+    int sum = i1 + i2 + i3 + i4;
+    if (product > 50) {
+        printf("Iloczyn: %i", product);
+    } else if (sum <= 10) {
+        printf("Suma: %i", sum);
+    } else if (i1 == i2 || i2 == i3 || i3 == i4 || i4 == i1) {
+        printf("Conajmniej dwie ze zmiennych sa sobie rowne");
+    } else {
+        printf("Bledne dane");
+    }
+
+    return 0;
+}
+
+ZADANIE 8
+
+#include "stdio.h"
+
+int main() {
+    int input;
+
+    printf("Podaj liczbe: ");
+    scanf("%i", &input);
+
+    int mod = input % 8;
+    if (mod == 0) {
+        printf("%i jest podzielne przez 8", input);
+    } else {
+        printf("Reszta z dzielenia %i przez 8: %i", input, mod);
+    }
+
+    return 0;
+}
+
+ZADANIE 9
+
+#include "stdio.h"
+
+int main() {
+    int i1, i2, i3;
+
+    printf("Podaj zmienna 1: ");
+    scanf("%i", &i1);
+    fflush(stdin);
+
+    printf("Podaj zmienna 2: ");
+    scanf("%i", &i2);
+    fflush(stdin);
+
+    printf("Podaj zmienna 3: ");
+    scanf("%i", &i3);
+
+
+    if (i1 < i2 && i1 < i3) {
+        printf("%i, %i, %i",
+               i1,
+               i2 < i3 ? i2 : i3,
+               i2 < i3 ? i3 : i2
+        );
+    }
+    else if (i2 < i1 && i2 < i3) {
+        printf("%i, %i, %i",
+               i2,
+               i1 < i3 ? i1 : i3,
+               i1 < i3 ? i3 : i1
+        );
+    }
+    else if (i3 < i1 && i3 < i2) {
+        printf("%i, %i, %i",
+               i3,
+               i1 < i2 ? i1 : i2,
+               i1 < i2 ? i2 : i1
+        );
+    }
+
+    return 0;
+}
