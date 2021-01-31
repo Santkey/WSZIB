@@ -1,4 +1,7 @@
-ZADANIE 1
+ZADANIE 1 Napisz w C ANSI program, który wczytuje dowolne dwa znaki, a następnie wypisuje
+obok siebie duże, drukowane litery A i B. Z tym, że litera A wypisywana jest pierwszym
+znakiem wczytanym w programie a litera B drugim. Wysokość liter14 znaków a
+szerokość każdej litery powinna wynosić 10 znaków.
 
 #include "stdio.h"
 
@@ -48,7 +51,10 @@ int main() {
     return 0;
 }
 
-ZADANIE 2
+ZADANIE 2 Napisz w C ANSI program, który wyświetla w podwójnej ramce na monitorze Twoją
+wizytówką. Imię i nazwisko jest stałe, nazwa kierunku wczytywana (informatyka
+dowolnymi literami dużymi, małymi lub takimi i takimi), rok studiów (liczba całkowita).
+Mają być również wczytywane dwa znaki, z których będą zbudowane ramki.
 
 #include "stdio.h"
 
@@ -84,7 +90,11 @@ int main() {
     return 0;
 }
 
-ZADANIE 3
+ZADANIE 3 Napisz w C ANSI program, który wyświetla w ramce szachownicę 5x5 i numeruje
+ciemne pola. Ramka ma być wykreślana dowolnym znakiem, wczytywanym z klawiatury
+po uruchomieniu programu. Pole szachownicy ma mieć wymiary 5 na 4 znaki. Ciemne
+pola mają być wypełnione dowolnym znakiem wczytywanym (przy każdym uruchomieniu
+programu) z klawiatury.
 
 #include "stdio.h"
 
@@ -126,7 +136,9 @@ int main() {
     return 0;
 }
 
-ZADANIE 4
+ZADANIE 4 Napisz w C ANSI program, który rozpoznaje, czy wczytywany znak jest cyfrą i jeżeli
+wystąpi taka sytuacja mnoży ją przez 12 i wypisuje wynik. Jeżeli nie, to wypisywany jest
+odpowiedni komunikat.
 
 #include "stdio.h"
 
@@ -144,7 +156,9 @@ int main() {
     return 0;
 }
 
-ZADANIE 5
+ZADANIE 5 Napisz w C ANSI program, który rozpoznaje, czy wczytywany znak jest literą i jeżeli
+wystąpi taka sytuacja, to dużą zamienia na małą, a małą na dużą bez użycia funkcji z
+biblioteki
 
 #include "stdio.h"
 
@@ -164,7 +178,11 @@ int main() {
     return 0;
 }
 
-ZADANIE 6
+ZADANIE 6 Napisz w C ANSI program, który wczytuje cztery liczby zmiennoprzecinkowe i jeżeli:
+a)ich iloczyn jest mniejszy od 100, ale różny od 0, to go wypisuje, b)ich suma jest
+większa od 200, to wypisywana jest suma c)jedna z nich jest zerem, to wypisywany jest
+odpowiedni komunikat d) jeżeli nie występuje żadne z powyższych wypisuje komunikat
+„bledne dane”.
 
 #include "stdio.h"
 
@@ -201,7 +219,11 @@ int main() {
     return 0;
 }
 
-ZADANIE 7
+ZADANIE 7 Napisz w C ANSI program, który wczytuje cztery liczby całkowitoliczbowe i jeżeli:
+a)ich iloczyn jest większa od 50, ale różny od 0, to go wypisuje, b)ich suma jest
+mniejsza bądź równa od 10, to wypisywana jest suma c)dwie z nich są równe, to
+wypisywany jest odpowiedni komunikat d) jeżeli nie występuje żadne z powyższych
+wypisuje komunikat „bledne dane”.
 
 #include "stdio.h"
 
@@ -238,7 +260,8 @@ int main() {
     return 0;
 }
 
-ZADANIE 8
+ZADANIE 8 Napisz w C ANSI program, który wczytuje liczbę całkowitą i jeżeli jest ona podzielna
+przez 8 to wypisuje komunikat, a jeżeli nie, wypisuje resztę z dzielenia przez 8.
 
 #include "stdio.h"
 
@@ -258,7 +281,8 @@ int main() {
     return 0;
 }
 
-ZADANIE 9
+ZADANIE 9 Napisz w C ANSI program, który wczytuje trzy liczby całkowite i wypisuje je w
+kolejności rosnącej.
 
 #include "stdio.h"
 
