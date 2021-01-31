@@ -4,7 +4,7 @@
 int main()
 {
 
-// Zadanie 1
+// Zadanie 1 
     /*
         Napisz program, który przesuwa w prawo o jedną pozycję zawartość tablicy
         10-cio elementowej liczb całkowitych tzn. dla elementów i=0,..,8 t[i+1] po
