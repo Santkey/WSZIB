@@ -1,4 +1,6 @@
-ZADANIE 1
+ZADANIE 1 Napisz program w języku ANSI C, który wczytuje dowolne liczby całkowite i wypisuje
+na monitorze najmniejszą z tych liczb. Program kończy działanie, gdy wprowadzimy 0 (0
+jest traktowane wyłącznie jako warunek końca, a nie jako jedna z wprowadzanych liczb).
 
 #include <stdio.h>
 
@@ -23,7 +25,10 @@ int main() {
     } while(1);
 }
 
-ZADANIE 2
+ZADANIE 2 Napisz program w języku ANSI C, który wczytuje dowolne znaki z klawiatury aż do
+momentu naciśnięcia znaku '*'. Wtedy program powinien zapytać użytkownika czy chce
+przerwać wczytywanie. Po naciśnięciu znaku 't' lub 'T' wczytywanie ma być przerwane,
+natomiast po naciśnięciu innego klawisza wczytywanie powinno być kontynuowane.
 
 #include <stdio.h>
 
@@ -55,7 +60,9 @@ int main() {
     return 0;
 }
 
-ZADANIE 3
+ZADANIE 3 Napisz program w języku ANSI C, który wczytuje dowolne liczby całkowite i wypisuje
+na monitorze sumę wprowadzonych liczb nieujemnych. Program kończy działanie, gdy
+wprowadzimy liczbę podzielną przez 13.
 
 #include <stdio.h>
 
@@ -81,7 +88,9 @@ int main() {
     return 0;
 }
 
-ZADANIE 4
+ZADANIE 4 Napisz program w języku ANSI C, który wczytuje dowolne liczby całkowite i wypisuje
+na monitorze sumę wprowadzonych liczb nieparzystych. Program kończy działanie, gdy
+obliczona suma będzie podzielna przez 100.
 
 #include <stdio.h>
 
@@ -104,7 +113,9 @@ int main() {
     return 0;
 }
 
-ZADANIE 5
+ZADANIE 5 Napisz program w języku ANSI C, który wczytuje liczby zmiennoprzecinkowe z
+klawiatury, sprawdza, czy są większe od zera (pozostałe pomija) i wypisuje je na
+monitorze do momentu, dopóki ich iloczyn nie przekroczy 500.
 
 #include <stdio.h>
 
@@ -133,7 +144,8 @@ int main() {
     return 0;
 }
 
-ZADANIE 6
+ZADANIE 6 Napisz program w języku ANSI C, który wczytuje z klawiatury liczby całkowite (i
+wypisuje na monitorze)aż do momentu natrafienia na liczbę podzielną przez 11 lub 13.
 
 #include <stdio.h>
 
@@ -149,7 +161,8 @@ int main() {
     return 0;
 }
 
-ZADANIE 7
+ZADANIE 7 Napisz program w języku ANSI C, który wczytuje z klawiatury dowolne znaki aż do
+momentu, gdy kolejno wprowadzone znaki będą gwiazdką i kropką.
 
 #include <stdio.h>
 
@@ -169,7 +182,8 @@ int main() {
     return 0;
 }
 
-ZADANIE 8
+ZADANIE 8 Napisz program w języku ANSI C, który wczytuje i wypisuje z klawiatury dowolne
+znaki (pojedynczo) aż do momentu, gdy dwa kolejno wprowadzane znaki powtórzą się.
 
 #include <stdio.h>
 
@@ -191,7 +205,9 @@ int main() {
     return 0;
 }
 
-ZADANIE 9
+ZADANIE 9 Napisz program w języku ANSI C, który wczytuje po dwie dowolne liczby całkowite,
+porównuje je i wypisuje większą. Wczytywanie kończy się, gdy wprowadzimy w
+kolejnej dwójce dwie jednakowe liczby.
 
 #include <stdio.h>
 
@@ -216,7 +232,9 @@ int main() {
     return 0;
 }
 
-ZADANIE 10
+ZADANIE 10 Napisz program w języku ANSI C, który na zmianę wczytuje i wypisuje liczby
+zmiennoprzecinkowe i znaki, dopóki iloczyn wczytanych liczb zmiennoprzecinkowych
+nie przekroczy 350.
 
 #include <stdio.h>
 
